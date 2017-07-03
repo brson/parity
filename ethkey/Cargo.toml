@@ -12,3 +12,4 @@ rustc-hex = "1.0"
 ethcore-bigint = { path = "../util/bigint" }
 rust-crypto = "0.2"
 byteorder = "1.0"
+panic_hook = { path = "../panic_hook" }

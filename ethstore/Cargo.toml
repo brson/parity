@@ -22,5 +22,6 @@ ethcore-bigint = { path = "../util/bigint" }
 smallvec = "0.4"
 parity-wordlist = "1.0"
 tempdir = "0.3"
+panic_hook = { path = "../panic_hook" }
 
 [lib]

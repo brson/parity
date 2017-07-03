@@ -51,6 +51,7 @@ parity-rpc = { path = "rpc" }
 parity-rpc-client = { path = "rpc_client" }
 parity-updater = { path = "updater" }
 path = { path = "util/path" }
+panic_hook = { path = "panic_hook" }
 
 parity-dapps = { path = "dapps", optional = true }
 clippy = { version = "0.0.103", optional = true}
