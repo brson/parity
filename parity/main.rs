@@ -310,8 +310,7 @@ macro_rules! trace_main {
 }
 
 fn main() {
-	// Always print backtrace on panic.
-	env::set_var("RUST_BACKTRACE", "1");
+	util::panic_hook::set();
 
 	// assuming the user is not running with `--force-direct`, then:
 	// if argv[0] == "parity" and this executable != ~/.parity-updates/parity, run that instead.

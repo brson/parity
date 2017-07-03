@@ -58,6 +58,8 @@ General options:
 
 
 fn main() {
+	util::panic_hook::set();
+
 	let args: Args = Docopt::new(USAGE).and_then(|d| d.decode()).unwrap_or_else(|e| e.exit());
 
 	if args.flag_json {

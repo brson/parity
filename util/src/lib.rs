@@ -108,6 +108,7 @@ extern crate lru_cache;
 extern crate heapsize;
 extern crate itertools;
 extern crate ethcore_logger;
+extern crate backtrace;
 
 #[macro_use]
 extern crate log as rlog;
@@ -134,6 +135,7 @@ pub mod triehash;
 pub mod trie;
 pub mod nibbleslice;
 pub mod nibblevec;
+pub mod panic_hook;
 pub mod semantic_version;
 pub mod snappy;
 pub mod cache;
