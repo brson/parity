@@ -38,11 +38,11 @@ fn panic_hook(info: &PanicInfo) {
 	let line = location.as_ref().map(|l| l.line()).unwrap_or(0);
 
 	let msg = match info.payload().downcast_ref::<&'static str>() {
-	Some(s) => *s,
-	None => match info.payload().downcast_ref::<String>() {
-		Some(s) => &s[..],
-		None => "Box<Any>",
-	}
+		Some(s) => *s,
+		None => match info.payload().downcast_ref::<String>() {
+			Some(s) => &s[..],
+			None => "Box<Any>",
+		}
 	};
 
 	let thread = thread::current();
@@ -57,8 +57,11 @@ fn panic_hook(info: &PanicInfo) {
 	let _ = writeln!(stderr, "");
 	let _ = writeln!(stderr, "{:?}", backtrace);
 	let _ = writeln!(stderr, "");
-	let _ = writeln!(stderr, "Thread '{}' panicked at '{}', {}:{}",
-					 name, msg, file, line);
+	let _ = writeln!(
+		stderr, 
+		"Thread '{}' panicked at '{}', {}:{}",
+		name, msg, file, line
+	);
 
 	let _ = writeln!(stderr, "{}", ABOUT_PANIC);
 }
