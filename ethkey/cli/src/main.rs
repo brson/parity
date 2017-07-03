@@ -17,6 +17,7 @@
 extern crate docopt;
 extern crate rustc_serialize;
 extern crate ethkey;
+extern crate ethcore_util as util;
 
 use std::{env, fmt, process};
 use std::num::ParseIntError;
@@ -135,6 +136,8 @@ impl DisplayMode {
 }
 
 fn main() {
+	util::panic_hook::set();
+
 	match execute(env::args()) {
 		Ok(ok) => println!("{}", ok),
 		Err(err) => {
