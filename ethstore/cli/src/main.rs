@@ -17,6 +17,7 @@
 extern crate rustc_serialize;
 extern crate docopt;
 extern crate ethstore;
+extern crate ethcore_util as util;
 
 use std::{env, process, fs};
 use std::io::Read;
@@ -105,6 +106,8 @@ struct Args {
 }
 
 fn main() {
+	util::panic_hook::set();
+
 	match execute(env::args()) {
 		Ok(result) => println!("{}", result),
 		Err(err) => {
